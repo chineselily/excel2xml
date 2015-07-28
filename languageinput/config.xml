@@ -14,5 +14,5 @@
 	<activityFileName fileName="persontarget,flowerExpo,flowerSaleRank,voteForSale,complexpop"/>
 	<logout>1</logout>
 	<keyColumn>Key</keyColumn>
-	<defaultTag>Base</defaultTag>
+	<defaultTag>base</defaultTag>
 </root>
