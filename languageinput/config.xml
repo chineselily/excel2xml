@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<languagefile>
+		<item lanuage="Chinese" folder="zh_tw"/>
+		<item lanuage="English" folder="en_us"/>
+		<item lanuage="German" folder="de_de,de_se"/>
+		<item lanuage="Dutch" folder="nl_nl,nl_se"/>
+		<item lanuage="French" folder="fr_fr,fr_se"/>
+		<item lanuage="Spanish" folder="es_es"/>
+		<item lanuage="Portuguese" folder="pt_pt"/>
+		<item lanuage="Italian" folder="it_it"/>
+		<item lanuage="Russian" folder="ru_ru"/>
+	</languagefile>
+	<activityFileName fileName="persontarget,flowerExpo,flowerSaleRank,voteForSale,complexpop"/>
+	<logout>1</logout>
+	<keyColumn>Key</keyColumn>
+	<defaultTag>Base</defaultTag>
+</root>
