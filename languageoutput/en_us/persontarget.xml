@@ -1,59 +1,77 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <root>
-   <personTarget20150417>
-     <info title_txt="Garden Leisure Time"
-           desc_txt="Isn't it the time to enjoy the outdoors now the winds of spring are blowing? Complete these tasks! There's something cute waiting for you!"
-           personTarget_tip_txt_1="Sell the following flowers and get rewards!"
-           personTarget_tip_txt_2="Sell the following flowers and get rewards!"
-           personTarget_tip_txt_3="Sell the following flowers and get rewards!"/>
-   </personTarget20150417>
-   <personTarget20150515>
-     <info title_txt="Summer Iced Drink"
-           desc_txt="Summer continues without stopping. Don't you feel a bit stuffy and thirsty? Finish the following tasks to get a delicious and refreshing Iced Drink Dessert!"
-           personTarget_tip_txt_1="Sell the following flowers and get rewards!"
-           personTarget_tip_txt_2="Sell the following flowers and get rewards!"
-           personTarget_tip_txt_3="Sell the following flowers and get rewards!"/>
-   </personTarget20150515>
-   <personTarget20150621>
-     <info title_txt="Summer Panda Life"
-           desc_txt="Although it's hot in the summer, pandas still have rich life experiences. Let's go take a look!"
-           personTarget_tip_txt_1="Sell the following flowers and get rewards!"
-           personTarget_tip_txt_2="Sell the following flowers and get rewards!"
-           personTarget_tip_txt_3="Sell the following flowers and get rewards!"/>
-   </personTarget20150621>
-   <personTarget20150712>
-     <info title_txt="Light Pink Love"
-           desc_txt="Pink decorations are very beautiful. Pink can bring you luck. Come join the event to get rewards!"
-           personTarget_tip_txt_1="Sell the following flowers and get rewards!"
-           personTarget_tip_txt_2="Sell the following flowers and get rewards!"
-           personTarget_tip_txt_3="Sell the following flowers and get rewards!"/>
-   </personTarget20150712>
-   <base>
-     <info time_txt="Event's end: [c]{time}[/c]"
-           name_go="Click to go"
-           tips_txt="Get event flowers in the Market and Lab Seed Machine. Claim rewards before the event's end"
-           cash_txt="+{amount}Cash"
-           name_lingqu="Collect"
-           goldspend_txt="Spend [c]{amount} Gold[/c]"
-           goldrefund_txt="Refund [c]{amount} Gold[/c]"
-           goldextra_name_txt="Bonus reward"
-           gold_tips_txt="You can only collect every Gold refund reward once"
-           goldname_txt="Secret gift"
-           gold_open_tips="Opened"
-           name_kaiqi="Open"
-           name_qingqu="Collect"
-           super_goal_txt="Sell {name}"
-           super_activate_cash="Cost: {amount}"
-           superTimer_txt="Super target: [c]{time}[/c]"
-           time_end_txt="Finished"
-           super_activte_txt="You've failed the challenge. Don't worry, try a new super target!"
-           super_reward_txt="Challenge for prize"
-           name_tiaozhan="Accept challenge"
-           name_tiaozhan2="Challenge again"
-           super_name="Super target"
-           super_deActivate="Not started yet"
-           superTarget_des_txt="You like a bit of a challenge, right? I've got a super target for you where you can win prizes! Do you want to give it a go?"
-           superTarget_complete="Completed！"
-           super_sale_txt="Sell {name}"/>
-   </base>
+	<personTarget20150417>
+		<info title_txt="Garden Leisure Time"
+		  desc_txt="Isn't it the time to enjoy the outdoors now the winds of spring are blowing? Complete these tasks! There's something cute waiting for you!"
+		  personTarget_tip_txt_1="Sell the following flowers and get rewards!"
+		  personTarget_tip_txt_2="Sell the following flowers and get rewards!"
+		  personTarget_tip_txt_3="Sell the following flowers and get rewards!"
+		 />
+	</personTarget20150417>
+
+	<personTarget20150515>
+		<info title_txt="Summer Iced Drink"
+		  desc_txt="Summer continues without stopping. Don't you feel a bit stuffy and thirsty? Finish the following tasks to get a delicious and refreshing Iced Drink Dessert!"
+		  personTarget_tip_txt_1="Sell the following flowers and get rewards!"
+		  personTarget_tip_txt_2="Sell the following flowers and get rewards!"
+		  personTarget_tip_txt_3="Sell the following flowers and get rewards!"
+		 />
+	</personTarget20150515>
+
+	<personTarget20150621>
+		<info title_txt="Summer Panda Life"
+		  desc_txt="Although it's hot in the summer, pandas still have rich life experiences. Let's go take a look!"
+		  personTarget_tip_txt_1="Sell the following flowers and get rewards!"
+		  personTarget_tip_txt_2="Sell the following flowers and get rewards!"
+		  personTarget_tip_txt_3="Sell the following flowers and get rewards!"
+		 />
+	</personTarget20150621>
+
+	<personTarget20150712>
+		<info title_txt="Light Pink Love"
+		  desc_txt="Pink decorations are very beautiful. Pink can bring you luck. Come join the event to get rewards!"
+		  personTarget_tip_txt_1="Sell the following flowers and get rewards!"
+		  personTarget_tip_txt_2="Sell the following flowers and get rewards!"
+		  personTarget_tip_txt_3="Sell the following flowers and get rewards!"
+		 />
+	</personTarget20150712>
+
+	<base>
+		<info gold_tips_txt="You can only collect every Gold refund reward once"
+		  name_go="Click to go"
+		  name_tiaozhan2="Challenge again"
+		  super_name="Super target"
+		  name_kaiqi="Open"
+		  goldextra_name_txt="Bonus reward"
+		  super_activte_txt="You've failed the challenge. Don't worry, try a new super target!"
+		  super_sale_txt="Sell {name}"
+		  name_lingqu="Collect"
+		  name_qingqu="Collect"
+		  tips_txt="Get event flowers in the Market and Lab Seed Machine. Claim rewards before the event's end"
+		  super_reward_txt="Challenge for prize"
+		  goldspend_txt="Spend [c]{amount} Gold[/c]"
+		  name_tiaozhan="Accept challenge"
+		  gold_open_tips="Opened"
+		  superTarget_des_txt="You like a bit of a challenge, right? I've got a super target for you where you can win prizes! Do you want to give it a go?"
+		  goldrefund_txt="Refund [c]{amount} Gold[/c]"
+		  super_activate_cash="Cost: {amount}"
+		  super_deActivate="Not started yet"
+		  goldname_txt="Secret gift"
+		  superTarget_complete="Completed！"
+		  super_goal_txt="Sell {name}"
+		  time_end_txt="Finished"
+		  cash_txt="+{amount}Cash"
+		  time_txt="Event's end: [c]{time}[/c]"
+		  superTimer_txt="Super target: [c]{time}[/c]"
+		 />
+	</base>
+
+	<personTarget20150920>
+		<info title_txt="pt_title_0920"
+		  desc_txt="pt_desc_0920"
+		  personTarget_tip_txt_1="Sell the following flowers and get rewards!"
+		  personTarget_tip_txt_2="Sell the following flowers and get rewards!"
+		  personTarget_tip_txt_3="Sell the following flowers and get rewards!"
+		 />
+	</personTarget20150920>
 </root>

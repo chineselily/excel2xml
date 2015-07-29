@@ -12,6 +12,7 @@
 		<item lanuage="Russian" folder="ru_ru"/>
 	</languagefile>
 	<activityFileName fileName="persontarget,flowerExpo,flowerSaleRank,voteForSale,complexpop"/>
+	<!-- <activityFileName fileName="voteForSale"/> -->
 	<logout>1</logout>
 	<keyColumn>Key</keyColumn>
 	<defaultTag>base</defaultTag>

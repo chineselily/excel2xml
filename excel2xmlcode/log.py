@@ -5,4 +5,5 @@ __author__ = 'Administrator'
 #  2: 只输出主要信息
 #  3：输出全部信息
 def logF(fileName,functionName,strDefine):
-    print("fileName=",fileName,"  functionName=",functionName,"  strDefine=",strDefine)
+    return
+    #print("fileName=",fileName,"  functionName=",functionName,"  strDefine=",strDefine)

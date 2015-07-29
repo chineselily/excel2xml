@@ -40,10 +40,6 @@ class LanguageSheet:
     arrColumnSign=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
     configT=None
 
-    def writeSheetToXMl(self):
-        #print(ET.tostring(self.lstree))
-        ETTool.writeXml("languageoutput/output.xml",self.lstree)
-
     def readSheet(self, tws):
         self.lsws=tws
         self.stitle=self.lsws.title

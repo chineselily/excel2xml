@@ -2,12 +2,43 @@ __author__ = 'Administrator'
 import xml.etree.ElementTree as ET
 from xml.etree import ElementTree
 from xml.dom import minidom
+from excel2xmlcode import RETool
+from excel2xmlcode import log
 
 def writeXml(spath, topelem, scode="utf-8"):
-    top2 = prettify(topelem)
+    #print("sPath=",spath)
+    strinit='<?xml version="1.0" encoding="UTF-8"?>'
+    strinit=strinit+writeXmlImp(topelem,"")
     file = open(file=spath,mode='w',encoding=scode)
-    file.write(top2.decode(scode))
+    file.write(strinit)
     file.close()
+    #print(strinit)
+    #print("\n\n\n")
+    #rough_string = ElementTree.tostring(topelem,scode)
+    #print(spath+" rough_string=",rough_string)
+    # top2 = prettify(topelem)
+    # file = open(file=spath,mode='w',encoding=scode)
+    # file.write(top2.decode(scode))
+    # file.close()
+def writeXmlImp(topelem, strenter):
+    strai=" "
+    stra=""
+    strcr=""
+    strcral=""
+    for i,v in enumerate(topelem.attrib):
+        stra+=strai+str(v)+"="+'"'+str(topelem.get(v))+'"'+"\n"+strenter+strai
+
+    strr="\n"+strenter+"<"+topelem.tag+stra
+
+    for child in topelem:
+        strcr=writeXmlImp(child,strenter+"\t")
+        strcral+=strcr+"\n"+strenter
+
+    if(len(strcral)>0):
+        strr+=">"+strcral+"</"+topelem.tag+">"
+    else:
+        strr+="/>"
+    return strr
 
 def prettify(elem, scode="utf-8"):
     """Return a pretty-printed XML string for the Element.
@@ -20,20 +51,31 @@ def createETRoot(rootname="root"):
     return ET.Element(rootname)
 
 def readETRoot(spath):
-    etree=ET.parse(spath)
-    return etree.getroot()
+    # etree=ET.parse(spath)
+    # return etree.getroot()
+    try:
+        file=open(file=spath,mode='r',encoding="utf-8")
+        str1=file.read()
+        file.close()
+        str2=RETool.xmlEscape(str1)
+        tree = ET.ElementTree(ET.fromstring(str2))
+        return tree.getroot()
+    except Exception as detaile:
+        log.logF("ETTool.py","readETRoot","error path="+str(spath)+" detaile="+str(detaile))
+        return None
 
-def addElement(parentelm,subtagname):
-    return ET.SubElement(parentelm,subtagname)
+def addElement(parentelm,subtagname,attrib={}):
+    return ET.SubElement(parentelm,subtagname,attrib)
 
 def appendElement(parentelm, subelm):
     parentelm.append(subelm)
 
 def getElement(parentelm,subtagname):
-    et=parentelm.find(subtagname)
-    if(et==None):
-        et=addElement(parentelm,subtagname)
-    return et
+    arrA=parentelm.findall(".//"+subtagname)
+    if(arrA==None or len(arrA)<=0):
+        arrA=[]
+        arrA.append(addElement(parentelm,subtagname))
+    return arrA[0]
 
 def getAllElementNames(topelm):
     arrR=[]
@@ -42,10 +84,10 @@ def getAllElementNames(topelm):
     return arrR
 
 def getElementByAttrib(parentelm, subtagname,attribname,attribvalue):
-    arrElem=parentelm.findall(subtagname)
-    for ele in arrElem:
-        if(ele.get(attribname)==attribvalue):
-            return ele
+    strp=".//"+subtagname+"[@"+attribname+"='"+attribvalue+"'"+"]"
+    arrA=parentelm.findall(strp)
+    if(arrA!=None and len(arrA)>0):
+        return arrA[0]
     return None
 
 def getElementText(parentelm, subtagname):
@@ -71,8 +113,8 @@ def getElementAttriValue(elemt, attriname):
 
 def getElementAllAttriByName(parentelm,subgtagname, arrtriname):
     arrR=[]
-    arrElem=parentelm.findall(subgtagname)
-    for ele in arrElem:
+    arrA=parentelm.findall(".//"+subgtagname)
+    for ele in arrA:
         arrR.append(ele.get(arrtriname))
     return arrR
 
@@ -91,6 +133,14 @@ def getAllParentTags(parentelm, attriname):
         arrR.append(v.tag)
     return arrR
 
+def getAttriValue(parentelm, attriname):
+    arrR=[]
+    strp=".//*"+"[@"+attriname+"]"
+    arrA=parentelm.findall(strp)
+    for i,v in enumerate(arrA):
+        arrR.append(v.get(attriname))
+    return arrR
+
 def getSubElementByTag(parentelm, tagname):
     strp=".//"+tagname
     return parentelm.findall(strp)
@@ -98,6 +148,10 @@ def getSubElementByTag(parentelm, tagname):
 def getParentElementByTag(topelem, tagname):
     strp=".//"+tagname+".."
     return topelem.findall(strp)
+
+def setAttribValue(elem, attriname, attrivalue):
+    if(elem!=None):
+        elem.set(attriname,attrivalue)
 
 def setElementAttriByName(parentelm,subtagname,attriname, attrivalue):
     elemt = getElement(parentelm, subtagname)
