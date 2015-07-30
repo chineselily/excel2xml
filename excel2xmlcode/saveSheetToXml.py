@@ -8,6 +8,8 @@ import os.path
 class SaveSheet:
     toolc=ToolConfig()
     sheet=None
+    arrErrorFile=[]
+    arrNewFile=[]
     def save(self, sheet):
         self.sheet=sheet
         filename=RETool.excludeNumbers(sheet.stitle)
@@ -21,11 +23,14 @@ class SaveSheet:
             rroot=None
             if(os.path.isfile(xfilename)):#如果存在则合并
                 rroot=ETTool.readETRoot(xfilename)
+                if(rroot==None):
+                    self.arrErrorFile.append(filename)
+                    continue
                 self.mergeOneLanguage(rroot,langmentr[0])
             else:#不存在则新建
                 rroot=ETTool.createETRoot()
                 ETTool.appendElement(rroot,langmentr[0])
-                break
+                self.arrNewFile.append(filename)
             self.writeOneLanguage(xfilename,rroot)
 
     def mergeOneLanguage(self, oldxmlroot,sheet):

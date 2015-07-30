@@ -2,20 +2,25 @@ __author__ = 'Administrator'
 from excel2xmlcode import readXlsx
 from excel2xmlcode import readConfig
 from excel2xmlcode import saveSheetToXml
+from excel2xmlcode.UI import SelectFilesUI
+from excel2xmlcode.UI import toolUI
 # read config
 config = readConfig.ToolConfig()
 config.readConfig("languageinput/config.xml")
 
-# read excel
-readExcel = readXlsx.LanguageExcel()
-arrSheetNames=readExcel.readLanguageExcel(config.excelpath)
+#read user selections
+ui = toolUI.ToolUI()
 
-# read each sheet
-lsheet = readXlsx.LanguageSheet()
-ssheet=saveSheetToXml.SaveSheet()
-for i,v in enumerate(arrSheetNames):
-    lsheet.readSheet(v)
-    ssheet.save(lsheet)
+# read excel
+# readExcel = readXlsx.LanguageExcel()
+# arrSheetNames=readExcel.readLanguageExcel(config.excelpath)
+#
+# # read each sheet
+# lsheet = readXlsx.LanguageSheet()
+# ssheet=saveSheetToXml.SaveSheet()
+# for i,v in enumerate(arrSheetNames):
+#     lsheet.readSheet(v)
+#     ssheet.save(lsheet)
 
 
 #writeXlsx.writeSimpleXlsx()

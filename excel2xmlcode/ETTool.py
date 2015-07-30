@@ -22,8 +22,7 @@ def writeXml(spath, topelem, scode="utf-8"):
     # file.close()
 def writeXmlImp(topelem, strenter):
     strai=" "
-    stra=""
-    strcral=""
+    stra=strcral=""
     for i,v in enumerate(topelem.attrib):
         stra+=strai+str(v)+"="+'"'+str(topelem.get(v))+'"'+"\n"+strenter+strai
 

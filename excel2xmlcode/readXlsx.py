@@ -21,11 +21,10 @@ class LanguageExcel:
         log.logF("readXlsx.py","readLanguageExcel",str1)
         return arrR
     #获取需要解析的sheet
-    def getNeedParseSheets(self, arrConfigFiles):
+    def getNeedParseSheets(self, arrSheetNames):
         arrR=[]
-        for i,v in enumerate(self.arr_sheet_names):
-           for j,k in enumerate(arrConfigFiles):
-               if(k.find(v)!=-1 or v.find(k)!=-1):
+        for i,v in enumerate(arrSheetNames):
+            if(self.arr_sheet_names.count(v)>0):
                    arrR.append(self.wb.get_sheet_by_name(v))
         return arrR
 

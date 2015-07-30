@@ -6,7 +6,7 @@ import excel2xmlcode.ETTool as ETTool
 class ToolConfig:
 
     configroot=None
-    excelpath="languageinput/[Flower Shop] Multi-Language Translation Sentence Form.xlsx"
+    #excelpath="languageinput/[Flower Shop] Multi-Language Translation Sentence Form.xlsx"
     xmlpath="languageoutput/"
 
     def readConfig(self,spath):
