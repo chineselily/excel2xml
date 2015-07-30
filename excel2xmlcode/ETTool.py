@@ -7,7 +7,7 @@ from excel2xmlcode import log
 
 def writeXml(spath, topelem, scode="utf-8"):
     #print("sPath=",spath)
-    strinit='<?xml version="1.0" encoding="UTF-8"?>'
+    strinit="<?xml version='1.0' encoding='UTF-8'?>"
     strinit=strinit+writeXmlImp(topelem,"")
     file = open(file=spath,mode='w',encoding=scode)
     file.write(strinit)
@@ -23,7 +23,6 @@ def writeXml(spath, topelem, scode="utf-8"):
 def writeXmlImp(topelem, strenter):
     strai=" "
     stra=""
-    strcr=""
     strcral=""
     for i,v in enumerate(topelem.attrib):
         stra+=strai+str(v)+"="+'"'+str(topelem.get(v))+'"'+"\n"+strenter+strai
@@ -32,10 +31,10 @@ def writeXmlImp(topelem, strenter):
 
     for child in topelem:
         strcr=writeXmlImp(child,strenter+"\t")
-        strcral+=strcr+"\n"+strenter
+        strcral+=strcr+strenter
 
     if(len(strcral)>0):
-        strr+=">"+strcral+"</"+topelem.tag+">"
+        strr+=">"+strcral+"\n"+strenter+"</"+topelem.tag+">"
     else:
         strr+="/>"
     return strr
