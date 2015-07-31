@@ -8,8 +8,8 @@ from excel2xmlcode.readConfig import ToolConfig
 import excel2xmlcode.ETTool as ETTool
 
 class LanguageExcel:
-    wb=None
-    arr_sheet_names=[]
+    wb,arr_sheet_names=None,[]
+
     def readLanguageExcel(self, spath):
         time1=datetime.datetime.now()
         self.wb = load_workbook(spath,True)
@@ -29,15 +29,8 @@ class LanguageExcel:
         return arrR
 
 class LanguageSheet:
-    lsws=None
-    ls_max_column=1
-    ls_max_row=1
-    lstree=None
-    stitle=""
-    ckey_colunm=None
-    ckey_row=None
+    lsws,ls_max_column,ls_max_row,lstree,stitle,ckey_colunm,ckey_row,configT=None,1,1,None,"",None,None,None
     arrColumnSign=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-    configT=None
 
     def readSheet(self, tws):
         self.lsws=tws

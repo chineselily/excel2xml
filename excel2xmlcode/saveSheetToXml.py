@@ -6,10 +6,8 @@ from excel2xmlcode.readConfig import ToolConfig
 import os.path
 
 class SaveSheet:
-    toolc=ToolConfig()
-    sheet=None
-    arrErrorFile=[]
-    arrNewFile=[]
+    toolc,sheet,arrErrorFile,arrNewFile=ToolConfig(),None,[],[]
+
     def save(self, sheet):
         self.sheet=sheet
         filename=RETool.excludeNumbers(sheet.stitle)

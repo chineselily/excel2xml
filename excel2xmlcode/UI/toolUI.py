@@ -118,11 +118,8 @@ class textAndButton:
 class Checkbar:
     def __init__(self, master, arrfiles):
         self.fm = Frame(master)
-        self.vars = []
-        self.names=arrfiles
-        arrfm=[]
-        icol=0
-        icolnum=4
+        self.vars,self.names,arrfm,icol,icolnum = [],arrfiles,[],0,4
+
         while(icol<len(arrfiles)//icolnum+1):
             fmk = Frame(self.fm)
             arrfm.append(fmk)
