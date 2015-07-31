@@ -79,7 +79,7 @@ class ToolUI:
 
         strd+="\n合并完成文件有："+"\n"
         for i,v in enumerate(arrMergeAll):
-            if(arrNew.count(v)<=0):
+            if(v not in arrNew):
                 strd+=v+", "
 
         donelabel=Label(self.root,text=strd).pack(side=TOP)
@@ -89,7 +89,7 @@ class ToolUI:
     def selectNeedMergeFiles(self,arruserselects):
         arrR=[]
         for i,v in enumerate(arruserselects):
-            if(self.arrMergeSheets.count(v)<=0):
+            if(v not in self.arrMergeSheets):
                 arrR.append(v)
         self.arrMergeSheets.extend(arrR)
         return arrR
@@ -123,13 +123,13 @@ class Checkbar:
         arrfm=[]
         icol=0
         icolnum=4
-        while(icol<int(len(arrfiles)/icolnum)+1):
+        while(icol<len(arrfiles)//icolnum+1):
             fmk = Frame(self.fm)
             arrfm.append(fmk)
             icol+=1
 
         for i,v in enumerate(self.names):
-             fmk=arrfm[int(i/icolnum)]
+             fmk=arrfm[i//icolnum]
              var = IntVar()
              chk = Checkbutton(fmk, text=v, variable=var)
              chk.pack(side=LEFT, anchor=W, expand=NO)

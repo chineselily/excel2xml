@@ -24,7 +24,7 @@ class LanguageExcel:
     def getNeedParseSheets(self, arrSheetNames):
         arrR=[]
         for i,v in enumerate(arrSheetNames):
-            if(self.arr_sheet_names.count(v)>0):
+            if(v in self.arr_sheet_names):
                    arrR.append(self.wb.get_sheet_by_name(v))
         return arrR
 
@@ -63,7 +63,7 @@ class LanguageSheet:
                     continue
                 languageN=self.getLanguageName(cell)
                 keyN=self.getKeyName(cell)
-                if(keyN==None or self.configT.arrLanguageName().count(languageN)<=0):
+                if(keyN==None or (languageN not in self.configT.arrLanguageName())):
                     continue
                 let=ETTool.getElement(self.lstree,self.getLanguageName(cell))
                 taget=ETTool.getElement(let,self.getTagName(cell))

@@ -46,7 +46,7 @@ class SaveSheet:
             tagname=RETool.excludeNumbers(alltags[0])+RETool.getNumnbers(self.sheet.stitle)
         else:
             tagname=oldTagName
-        if(alltags.count(tagname)<=0):#存在则不创建
+        if(tagname not in alltags):#存在则不创建
             ele=ETTool.getSubElementByTag(oldxmlroot,alltags[0])[0]
             arrpele=ETTool.getParentElementByTag(oldxmlroot,alltags[0])
             pele=None
