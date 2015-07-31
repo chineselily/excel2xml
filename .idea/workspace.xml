@@ -14,7 +14,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/excel2xml$main.coverage" NAME="main Coverage Results" MODIFIED="1438310691878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/excel2xml$main.coverage" NAME="main Coverage Results" MODIFIED="1438333887509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -31,8 +31,8 @@
       <file leaf-file-name="ETTool.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/excel2xmlcode/ETTool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="74.166664" vertical-offset="2681" max-vertical-offset="3287">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="3287">
+              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
               <folding>
                 <element signature="e#29#63#0" expanded="true" />
               </folding>
@@ -40,45 +40,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/excel2xmlcode/log.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="266">
-              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29874215" vertical-offset="0" max-vertical-offset="855">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-              <folding>
-                <element signature="e#29#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readConfig.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/excel2xmlcode/readConfig.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.1" vertical-offset="420" max-vertical-offset="1026">
-              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toolUI.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="toolUI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/excel2xmlcode/UI/toolUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-56.933334" vertical-offset="591" max-vertical-offset="2907">
-              <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6613119" vertical-offset="285" max-vertical-offset="2204">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <element signature="e#30#64#0" expanded="true" />
+                <element signature="e#1808#3892#0" expanded="false" />
+                <element signature="e#2769#3395#0" expanded="false" />
+                <element signature="e#5298#5593#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -87,40 +58,30 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/Python33/Lib/tkinter/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="11167" max-vertical-offset="74347">
-              <caret line="371" column="6" selection-start-line="371" selection-start-column="6" selection-end-line="371" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="20139" max-vertical-offset="74347">
+              <caret line="1070" column="0" selection-start-line="1070" selection-start-column="0" selection-end-line="1070" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="saveSheetToXml.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/excel2xmlcode/saveSheetToXml.py">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="16.533333" vertical-offset="667" max-vertical-offset="1273">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
-                <element signature="e#29#77#0" expanded="true" />
+                <element signature="e#29#63#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="writeXlsx.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/excel2xmlcode/writeXlsx.py">
+      <file leaf-file-name="scrollFrame.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/excel2xmlcode/UI/scrollFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readXlsx.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/excel2xmlcode/readXlsx.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="42.5" vertical-offset="1769" max-vertical-offset="2375">
-              <caret line="32" column="123" selection-start-line="32" selection-start-column="123" selection-end-line="32" selection-end-column="123" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="1387">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -129,8 +90,8 @@
       <file leaf-file-name="RETool.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/excel2xmlcode/RETool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.6" vertical-offset="21" max-vertical-offset="627">
-              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="1102">
+              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -154,16 +115,17 @@
         <option value="$PROJECT_DIR$/excel2xmlcode/writeXlsx.py" />
         <option value="$PROJECT_DIR$/languageinput/config.xml" />
         <option value="$PROJECT_DIR$/excel2xmlcode/log.py" />
-        <option value="$PROJECT_DIR$/excel2xmlcode/RETool.py" />
         <option value="$PROJECT_DIR$/excel2xmlcode/selectFiles.py" />
         <option value="$PROJECT_DIR$/excel2xmlcode/UI/selectFiles.py" />
         <option value="$PROJECT_DIR$/excel2xmlcode/UI/SelectFilesUI.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/excel2xmlcode/readConfig.py" />
-        <option value="$PROJECT_DIR$/excel2xmlcode/UI/toolUI.py" />
         <option value="$PROJECT_DIR$/excel2xmlcode/ETTool.py" />
         <option value="$PROJECT_DIR$/excel2xmlcode/readXlsx.py" />
         <option value="$PROJECT_DIR$/excel2xmlcode/saveSheetToXml.py" />
+        <option value="$PROJECT_DIR$/excel2xmlcode/UI/scrollFrame.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/excel2xmlcode/RETool.py" />
+        <option value="$PROJECT_DIR$/excel2xmlcode/UI/toolUI.py" />
       </list>
     </option>
   </component>
@@ -522,7 +484,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="44" y="0" width="1876" height="1034" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -530,13 +492,13 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28185746" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11555076" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20913978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40236053" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3477322" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -574,7 +536,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="104" />
+      <option name="time" value="117" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -858,49 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/excel2xmlcode/UI/SelectFilesUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="22" column="23" selection-start-line="18" selection-start-column="4" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python33/Lib/tkinter/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="2204">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python33/Lib/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11167" max-vertical-offset="74347">
-          <caret line="371" column="6" selection-start-line="371" selection-start-column="6" selection-end-line="371" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excel2xmlcode/UI/toolUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-56.933334" vertical-offset="591" max-vertical-offset="2907">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding>
-            <element signature="e#30#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excel2xmlcode/ETTool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="74.166664" vertical-offset="2681" max-vertical-offset="3287">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#29#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/excel2xmlcode/log.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="266">
@@ -911,7 +830,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/excel2xmlcode/readConfig.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1" vertical-offset="420" max-vertical-offset="1026">
+        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1026">
           <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
           <folding />
         </state>
@@ -919,23 +838,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/excel2xmlcode/readXlsx.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="42.5" vertical-offset="1769" max-vertical-offset="2375">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1769" max-vertical-offset="2375">
           <caret line="32" column="123" selection-start-line="32" selection-start-column="123" selection-end-line="32" selection-end-column="123" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excel2xmlcode/RETool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.6" vertical-offset="21" max-vertical-offset="627">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/excel2xmlcode/saveSheetToXml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="16.533333" vertical-offset="667" max-vertical-offset="1273">
+        <state vertical-scroll-proportion="0.0" vertical-offset="667" max-vertical-offset="1273">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#29#77#0" expanded="true" />
@@ -951,12 +862,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Python33/Lib/tkinter/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="2204">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excel2xmlcode/UI/scrollFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="1387">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29874215" vertical-offset="0" max-vertical-offset="855">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#29#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excel2xmlcode/ETTool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="3287">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+          <folding>
+            <element signature="e#29#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python33/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="20139" max-vertical-offset="74347">
+          <caret line="1070" column="0" selection-start-line="1070" selection-start-column="0" selection-end-line="1070" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excel2xmlcode/RETool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="1102">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/excel2xmlcode/UI/toolUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6613119" vertical-offset="285" max-vertical-offset="2204">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#30#64#0" expanded="true" />
+            <element signature="e#1808#3892#0" expanded="false" />
+            <element signature="e#2769#3395#0" expanded="false" />
+            <element signature="e#5298#5593#0" expanded="false" />
           </folding>
         </state>
       </provider>

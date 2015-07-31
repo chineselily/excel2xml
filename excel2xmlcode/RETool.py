@@ -26,3 +26,28 @@ def xmlEscape(strXml):
         strXml = strXml.replace(arrT[i],v)
     #print(strXml)
     return strXml
+
+def splitStr(strr,rlen=100):
+    rstr,istart,iend="",0,rlen
+    while(len(rstr)<len(strr)):
+        if(len(strr)-istart>rlen):
+            iend=istart+rlen
+        else:
+            iend=len(strr)
+        rstr+=strr[istart:iend]+"\n"
+        istart=iend
+    return rstr
+
+def splitStrArr(arrstr,rlen=6):
+     rstr,istart,iend,isplit="",0,rlen,0
+     while(isplit<len(arrstr)):
+        if(len(arrstr)-istart>rlen):
+            iend=istart+rlen
+        else:
+            iend=len(arrstr)
+        for i in range(istart,iend):
+            rstr+=arrstr[i]+","
+        rstr+="\n"
+        isplit+=iend-istart
+        istart=iend
+     return rstr
