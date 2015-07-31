@@ -14,12 +14,12 @@ class LanguageExcel:
         time1=datetime.datetime.now()
         self.wb = load_workbook(spath,True)
         self.arr_sheet_names=self.wb.get_sheet_names()
-        config=ToolConfig()
-        arrR=self.getNeedParseSheets(config.arrActivityFileName())
+        #config=ToolConfig()
+        #arrR=self.getNeedParseSheets(config.arrActivityFileName())
         time2=datetime.datetime.now()
         str1="read "+spath+" file taken "+ str(time2-time1)+" 秒"
         log.logF("readXlsx.py","readLanguageExcel",str1)
-        return arrR
+        #return arrR
     #获取需要解析的sheet
     def getNeedParseSheets(self, arrSheetNames):
         arrR=[]

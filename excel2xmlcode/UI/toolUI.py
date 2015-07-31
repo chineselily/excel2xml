@@ -9,14 +9,13 @@ from tkinter import *
 
 class ToolUI:
     arrMergeSheets=[]
+
     def __init__(self):
         self.root = Tk()
         self.root.title('合并google excel到多语言包')    #定义窗体标题
         self.root.geometry('760x650')
-
-        self.chooseexcel=textAndButton(self.root,"选择转换的excel",self.getExcelFile)
-        self.chooseoutput=textAndButton(self.root,"选择合并输出的目录",self.getOutPutDirectory)
-
+        self.chooseexcel=textAndButton(self.root,"选择需要转换的excel",self.getExcelFile)
+        self.chooseoutput=textAndButton(self.root,"选择导出的目录",self.getOutPutDirectory)
         self.root.mainloop()
 
     def getExcelFile(self):
@@ -38,7 +37,7 @@ class ToolUI:
         tk.withdraw() # we don't want a full GUI, so keep the root window from appearing
         options = {}
         options['initialdir'] = 'D:\\'
-        options['title'] = '选择多语言文字合并输出目录'
+        options['title'] = '选择多语言文字导出目录'
         self.filedirctory=askdirectory(**options)
         self.chooseoutput.setText(self.filedirctory)
         readConfig.ToolConfig.xmlpath=self.filedirctory+"/"
@@ -49,13 +48,14 @@ class ToolUI:
         self.getNeedChangeFiles(self.readExcel.arr_sheet_names)
 
     def getNeedChangeFiles(self, arrFiles):
-        self.selectexcelhint=Label(self.root,text="请选择需要转换的文件").pack(side=TOP)
+        self.selectexcelhint=Label(self.root,text="请选择需要导出的表格").pack(side=TOP)
         self.excelbar=Checkbar(self.root,arrFiles)
-        self.mergebtn=Button(self.root,text="开始合并",fg="red",command=self.startMerge).pack(side=TOP)
+        self.mergebtn=Button(self.root,text="开始导出已选择的表格",fg="red",command=self.startMerge).pack(side=TOP)
 
     def startMerge(self):
         arrselectnames=self.excelbar.getStates()
-        arrSheetNames=self.readExcel.readLanguageExcel(self.selectNeedMergeFiles(arrselectnames))
+        arrselectnames=self.selectNeedMergeFiles(arrselectnames)
+        arrSheetNames=self.readExcel.getNeedParseSheets(arrselectnames)
         if(len(arrSheetNames)<=0):
             return
         lsheet = readXlsx.LanguageSheet()
@@ -63,12 +63,9 @@ class ToolUI:
         for i,v in enumerate(arrSheetNames):
             lsheet.readSheet(v)
             ssheet.save(lsheet)
-        self.doneHint(ssheet.arrErrorFile,ssheet.arrNewFile)
+        self.doneHint(ssheet.arrErrorFile,ssheet.arrNewFile, arrselectnames)
 
-    def doneHint(self,arrError,arrNew):
-        if(self.donelabel!=None):
-            self.donelabel.pack_forget()
-
+    def doneHint(self,arrError,arrNew, arrMergeAll):
         strd=""
         if(len(arrError)>0):
             strd+="加载出现错误的文件："+"\n"
@@ -79,8 +76,15 @@ class ToolUI:
             strd+="\n"+"找不到合并文件，新创建的文件有："+"\n"
         for i,v in enumerate(arrNew):
             strd+=v+", "
-        strd+="合并完成"
-        self.donelabel=Label(self.root,text=strd).pack(side=TOP)
+
+        strd+="\n合并完成文件有："+"\n"
+        for i,v in enumerate(arrMergeAll):
+            if(arrNew.count(v)<=0):
+                strd+=v+", "
+
+        donelabel=Label(self.root,text=strd).pack(side=TOP)
+
+        ceshi=Label(self.root,text="左下").pack(side=BOTTOM and LEFT)
 
     def selectNeedMergeFiles(self,arruserselects):
         arrR=[]
