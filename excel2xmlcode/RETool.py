@@ -13,6 +13,12 @@ def getNumnbers(scontent):
         return""
     return result.group(0)
 
+def excludeWhite(scontent):
+    result=re.search(r"[a-zA-Z0-9_,]+",scontent)
+    if(result==None):
+        return""
+    return result.group(0)
+
 def xmlEscape(strXml):
     pt=re.compile('".*?"',re.M|re.S)
     arrT = re.findall(pt,strXml)

@@ -104,14 +104,7 @@ class midFormFrame:
         lh=Label(hintframe,text="被选中的表格中的内容将被\n导出到'选择导出的目录'\n相应的文件中\n比如选中了persontarget表格\n将会被导出到persontarget.xml\n如果找不到persontaget.xml\n则会新建一个persontarget.xml文件")\
             .pack(side=TOP,anchor=W,expand=YES)
         lb=Button(hintframe,text="开始导出",fg="red",command=self.startMerge).pack(side=TOP)
-        hintframe.pack(side=LEFT,anchor=W,expand=YES,padx=30)
-
-        langframe=Frame(allframe,name="langframe")
-        Label(langframe,text="以下是语言对应的导出目录",fg="red").pack()
-        Label(langframe,text="Chinese=>zh_tw").pack()
-        Label(langframe,text="English=>en_us").pack()
-        Label(langframe,text="French=>fr_fr,fr_se").pack()
-        langframe.pack(side=LEFT,anchor=W,expand=YES)
+        hintframe.pack(side=LEFT,anchor=W,expand=YES,padx=150)
 
         allframe.pack(side=TOP)
         lselect=Label(master,fg="red",name="selectformhint",text="").pack(side=TOP)
@@ -135,7 +128,26 @@ class midFormFrame:
 class bottomHintFrame:
     def __init__(self,master):
         self.master=master
-        Label(master,fg="red",name="bottomHintFramehint",text="").pack(side=TOP)
+        self.langdic={}
+        ballframe=Frame(master,name="bottomHintFrameAllFrame")
+
+        leftframe=Frame(ballframe,name="leftframe")
+        Label(leftframe,text="以下是语言对应的导出目录(可编辑)",fg="red").pack(side=TOP)
+        formframe=Frame(leftframe)
+        self.scrollformframe=VerticalScrolledFrame(formframe)
+        for i,v in enumerate(readConfig.arrLanguageName):
+            ed=editLabel(self.scrollformframe.interior,v, ','.join([str(x) for x in readConfig.arrLanguageFileName(v)]))
+            self.langdic[v]=ed.entry()
+
+        self.scrollformframe.pack()
+        formframe.pack(side=TOP)
+        leftframe.pack(side=LEFT,fill=BOTH,padx=50)#不 fill=BOTH简直没有办法左对齐
+
+        rightframe=Frame(ballframe,name="rightframe")
+        Label(rightframe,text="转换结果：",fg="red",name="hinttext").pack(side=TOP)
+        rightframe.pack(side=LEFT,fill=BOTH,padx=100)
+
+        ballframe.pack(side=TOP,fill=BOTH)
 
     def flesh(self,arrerror,arrnew,arrall):
         arrmerge=[]
@@ -146,10 +158,27 @@ class bottomHintFrame:
         str+=self.getStr(arrerror,".xml文件导出错误：")+"\n"
         str+=self.getStr(arrnew,"成功新建.xml文件：")+"\n"
         str+=self.getStr(arrmerge,"成功导出.xml文件：")+"\n"
-        self.master.children['bottomHintFramehint']['text']=str
+        self.master.children["bottomHintFrameAllFrame"].children['rightframe'].children['hinttext']['text']=str
 
     def getStr(self,arrfiles,shint):
         rstr=""
         if(len(arrfiles)>0):
             rstr+=shint+RETool.splitStrArr(arrfiles,5)
         return rstr
+
+    def getLangFiles(self):
+        rdic={}
+        for i,v in enumerate(self.langdic):
+            rdic[v]=self.langdic[v].get()
+        return rdic
+class editLabel:
+    def __init__(self, master,ltext,etext=""):
+        self.master=master
+        self.frame=Frame(master)
+        Label(self.frame, text=ltext).grid(row=0,column=0)
+        self.e1 = Entry(self.frame)
+        self.e1.insert(0,etext)
+        self.e1.grid(row=0, column=1)
+        self.frame.pack(side=TOP)
+    def entry(self):
+        return self.e1
