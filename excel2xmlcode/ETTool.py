@@ -6,32 +6,28 @@ from excel2xmlcode import RETool
 from excel2xmlcode import log
 
 def writeXml(spath, topelem, scode="utf-8"):
-    #print("sPath=",spath)
     strinit="<?xml version='1.0' encoding='UTF-8'?>"
     strinit=strinit+writeXmlImp(topelem,"")
     file = open(file=spath,mode='w',encoding=scode)
     file.write(strinit)
     file.close()
-    #print(strinit)
-    #print("\n\n\n")
-    #rough_string = ElementTree.tostring(topelem,scode)
-    #print(spath+" rough_string=",rough_string)
+    #原始的文件写操作
     # top2 = prettify(topelem)
     # file = open(file=spath,mode='w',encoding=scode)
     # file.write(top2.decode(scode))
     # file.close()
 def writeXmlImp(topelem, strenter):
     strai,stra,strcral=" ","",""
-
+    #解析元素的属性，组合成字符串
     for i,v in enumerate(topelem.attrib):
         stra+=strai+str(v)+"="+'"'+str(topelem.get(v))+'"'+"\n"+strenter+strai
-
+    #组合元素的头
     strr="\n"+strenter+"<"+topelem.tag+stra
-
+    #递归组合元素的子元素
     for child in topelem:
         strcr=writeXmlImp(child,strenter+"\t")
         strcral+=strcr+strenter
-
+    #组合元素的尾
     if(len(strcral)>0):
         strr+=">"+strcral+"\n"+strenter+"</"+topelem.tag+">"
     else:

@@ -17,7 +17,7 @@ class ToolUI:
         self.root.title('合并google excel到多语言包')    #定义窗体标题
         self.root.geometry('760x650')
         self.topselectframe=topFrame(self.root,self.readExcel)
-        self.midformframe=midFormFrame(self.root)
+        self.midformframe=midFormFrame(self.root,self.startMerge)
         self.bottomframe=bottomHintFrame(self.root)
         self.root.mainloop()
     #解析已选择的excel
@@ -84,7 +84,7 @@ class topFrame:
         options['title'] = '选择多语言文字导出目录'
         self.filedirctory=askdirectory(**options)
         self.master.children["outputselectframe"].children["selectdirlabel"]['text']=self.filedirctory
-        readConfig.ToolConfig.xmlpath=self.filedirctory+"/"
+        readConfig.xmlpath=self.filedirctory+"/"
         tk.destroy()
         self.allselectedcommand()
 class midFormFrame:
@@ -133,9 +133,9 @@ class midFormFrame:
     def startMerge(self):
         self.mergefun()
 class bottomHintFrame:
-    def __init__(self,master,arrerror,arrnew,arrall):
+    def __init__(self,master):
         self.master=master
-        Label(master,fg="red",name="bottomHintFramehint",text="xxxxxxxxxxxxxxxxxx").pack(side=TOP)
+        Label(master,fg="red",name="bottomHintFramehint",text="").pack(side=TOP)
 
     def flesh(self,arrerror,arrnew,arrall):
         arrmerge=[]
