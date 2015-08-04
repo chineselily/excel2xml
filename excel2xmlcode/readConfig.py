@@ -1,5 +1,7 @@
 __author__ = 'Administrator'
 
+from excel2xmlcode.utils.app.AppData import AppData
+
 xmlpath="languageoutput/"
 keyColumn="Key"
 defaultTagName="base"
@@ -10,7 +12,26 @@ dicLanguageFiles={"Chinese":["zh_tw"],"English":["en_us"],"German":["de_de","de_
                   "Portuguese":["pt_pt"],"Italian":["it_it"],"Russian":["ru_ru"]}
 newlineescape="newlineescape"
 
+appd=AppData()
+
 def arrLanguageFileName(slanguage):
     return dicLanguageFiles.get(slanguage,[])
+
+def getExcelPath():
+    rp=appd.getAppData("excelpath")
+    if(rp==None):
+        return "D:/"
+    return rp
+def saveExcelPath(spath):
+    appd.saveAppData("excelpath",spath)
+
+def getOutputPath():
+    rp=appd.getAppData("outputpath")
+    if(rp==None):
+        return "D:/"
+    return rp
+def saveOutputPath(spath):
+    rp=appd.saveAppData("outputpath",spath)
+
 
 

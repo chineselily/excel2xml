@@ -16,7 +16,7 @@ class SaveSheet:
         for i,v in enumerate(languageNames):
            arrLangFile=readConfig.arrLanguageFileName(v)
            for j,k in enumerate(arrLangFile):#遍历语言的对应文件
-            xfilename=readConfig.xmlpath+k+"/"+filename+".xml"#保存的文件名字
+            xfilename=readConfig.getOutputPath()+k+"/"+filename+".xml"#保存的文件名字
             langmentr=ETTool.getElement(sheet.lstree,v)#对应语言的文字配置
             rroot=None
             if(os.path.isfile(xfilename)):#如果存在则合并

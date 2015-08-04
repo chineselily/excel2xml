@@ -27,6 +27,8 @@ class ToolUI:
         self.readExcel.readLanguageExcel(self.topselectframe.excelpath)
         #将解析完的表格输出
         self.midformframe.freshForms(self.readExcel.arr_sheet_names)
+        readConfig.saveExcelPath(self.topselectframe.excelpath)
+        readConfig.saveOutputPath(self.topselectframe.filedirctory)
     #将excel合并到导出目录的xml中
     def startMerge(self):
         arrselectnames=self.selectNeedMergeFiles(self.midformframe.selectnames)
@@ -69,7 +71,7 @@ class topFrame:
         options = {}
         options['defaultextension'] = '.xlsx'
         options['filetypes'] = [('excel files', '.xlsx')]
-        options['initialdir'] = 'D:\\'
+        options['initialdir'] = readConfig.getExcelPath()
         options['initialfile'] = 'language.xlsx'
         #options['parent'] = root
         options['title'] = '选择转换的excel'
@@ -80,11 +82,11 @@ class topFrame:
         tk=Tk()
         tk.withdraw() # we don't want a full GUI, so keep the root window from appearing
         options = {}
-        options['initialdir'] = 'D:\\'
+        options['initialdir'] = readConfig.getOutputPath()
         options['title'] = '选择多语言文字导出目录'
         self.filedirctory=askdirectory(**options)
         self.master.children["outputselectframe"].children["selectdirlabel"]['text']=self.filedirctory
-        readConfig.xmlpath=self.filedirctory+"/"
+        self.filedirctory+="/"
         tk.destroy()
         self.allselectedcommand()
 class midFormFrame:
