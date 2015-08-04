@@ -60,6 +60,7 @@ class LanguageSheet:
         time2=datetime.datetime.now()
         str1="read "+self.stitle+" sheet taken "+ str(time2-time1)+" 秒"
         log.logF("readXlsx.py","rowDirectionRead",str1)
+        ETTool.writeXml("languageoutput/"+self.stitle+".xml",self.lstree)
 
     def getLanguageName(self,cell):
         if(cell.column==None or cell.row==None or self.ckey_row==None or self.ckey_colunm==None):
@@ -89,7 +90,7 @@ class LanguageSheet:
             self.ckey_row=cell.row
 
     def isValidRow(self,cell):
-        if(self.ckey_colunm==None or
+        if(self.ckey_colunm!=None and
         (cell.column==self.ckey_colunm and (cell.value==None or cell.value==readConfig.keyColumn))):
             return False
         return True

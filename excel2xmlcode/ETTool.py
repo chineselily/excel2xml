@@ -4,10 +4,12 @@ from xml.etree import ElementTree
 from xml.dom import minidom
 from excel2xmlcode import RETool
 from excel2xmlcode import log
+from excel2xmlcode import readConfig
 
 def writeXml(spath, topelem, scode="utf-8"):
     strinit="<?xml version='1.0' encoding='UTF-8'?>"
     strinit=strinit+writeXmlImp(topelem,"")
+    strinit=strinit.replace(readConfig.newlineescape,"\n")
     file = open(file=spath,mode='w',encoding=scode)
     file.write(strinit)
     file.close()

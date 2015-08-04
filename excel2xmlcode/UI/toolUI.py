@@ -144,7 +144,7 @@ class bottomHintFrame:
         leftframe.pack(side=LEFT,fill=BOTH,padx=50)#不 fill=BOTH简直没有办法左对齐
 
         rightframe=Frame(ballframe,name="rightframe")
-        Label(rightframe,text="转换结果：",fg="red",name="hinttext").pack(side=TOP)
+        Label(rightframe,text="导出结果：",name="hinttext").pack(side=TOP)
         rightframe.pack(side=LEFT,fill=BOTH,padx=100)
 
         ballframe.pack(side=TOP,fill=BOTH)
@@ -154,16 +154,16 @@ class bottomHintFrame:
         for i,v in enumerate(arrall):
             if((v not in arrnew) and(v not in arrerror)):
                 arrmerge.append(v)
-        str="转换完成："+"\n"
-        str+=self.getStr(arrerror,".xml文件导出错误：")+"\n"
-        str+=self.getStr(arrnew,"成功新建.xml文件：")+"\n"
-        str+=self.getStr(arrmerge,"成功导出.xml文件：")+"\n"
+        str="导出完成："+"\n"
+        str+=self.getStr(arrerror,".xml文件导出错误：")
+        str+=self.getStr(arrnew,"成功新建.xml文件：")
+        str+=self.getStr(arrmerge,"成功导出.xml文件：")
         self.master.children["bottomHintFrameAllFrame"].children['rightframe'].children['hinttext']['text']=str
 
     def getStr(self,arrfiles,shint):
         rstr=""
         if(len(arrfiles)>0):
-            rstr+=shint+RETool.splitStrArr(arrfiles,5)
+            rstr+=shint+"\n"+RETool.splitStrArr(arrfiles,1)+"\n"
         return rstr
 
     def getLangFiles(self):

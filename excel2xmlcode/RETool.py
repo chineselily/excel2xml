@@ -1,5 +1,6 @@
 __author__ = 'Administrator'
 import re
+from excel2xmlcode import readConfig
 
 def excludeNumbers(scontent):
     result=re.search(r"[^0-9]+",scontent)
@@ -27,6 +28,10 @@ def xmlEscape(strXml):
         vr=v.replace("&", "&amp;")
         vr=vr.replace(">", "&gt;")
         vr=vr.replace("<", "&lt;")
+        vr=vr.replace("\n",readConfig.newlineescape)
+        #tr = vr.decode(encoding='utf-8')##utf-8 string to unicode
+        #tr=vr.encode(encoding='utf-8')##unicode to utf-8 string
+        #print(tr)
         arrR.append(vr)
     for i,v in enumerate(arrR):
         strXml = strXml.replace(arrT[i],v)

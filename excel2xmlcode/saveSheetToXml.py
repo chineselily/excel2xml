@@ -44,7 +44,7 @@ class SaveSheet:
             tagname=RETool.excludeNumbers(alltags[0])+RETool.getNumnbers(self.sheet.stitle)
         else:
             tagname=oldTagName
-        if(tagname not in alltags):#存在则不创建
+        if((tagname not in alltags) and len(alltags)>0):#有相同的属性关键字，但是没有相应tagname的标签值
             ele=ETTool.getSubElementByTag(oldxmlroot,alltags[0])[0]
             arrpele=ETTool.getParentElementByTag(oldxmlroot,alltags[0])
             pele=None
@@ -55,6 +55,9 @@ class SaveSheet:
             #ele.tag=tagname
             pmy=ETTool.addElement(pele,tagname)
             ETTool.addElement(pmy,readConfig.defaultKeyName,ETTool.getElementAttri(ele,readConfig.defaultKeyName))
+        elif(len(ETTool.getSubElementByTag(oldxmlroot,tagname))<=0):#没有有这个标签
+            ETTool.addElement(oldxmlroot,tagname)
+
         return ETTool.getSubElementByTag(oldxmlroot,tagname)
 
     def writeOneLanguage(self,spath,rroot):
