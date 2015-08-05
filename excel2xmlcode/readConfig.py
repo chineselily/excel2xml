@@ -18,18 +18,16 @@ def arrLanguageFileName(slanguage):
     return dicLanguageFiles.get(slanguage,[])
 
 def getExcelPath():
-    rp=appd.getAppData("excelpath")
-    if(rp==None):
-        return "D:/"
-    return rp
+    # rp=appd.getAppData("excelpath")
+    # if(rp==None):
+    #     return "D:/"
+    # return rp
+    return appd.getAppData("excelpath")
 def saveExcelPath(spath):
     appd.saveAppData("excelpath",spath)
 
 def getOutputPath():
-    rp=appd.getAppData("outputpath")
-    if(rp==None):
-        return "D:/"
-    return rp
+    return appd.getAppData("outputpath")
 def saveOutputPath(spath):
     rp=appd.saveAppData("outputpath",spath)
 

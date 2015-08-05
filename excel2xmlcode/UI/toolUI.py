@@ -40,7 +40,7 @@ class ToolUI:
         for i,v in enumerate(arrSheetNames):
             lsheet.readSheet(v)
             ssheet.save(lsheet)
-        self.bottomframe.flesh(ssheet.arrErrorFile,ssheet.arrNewFile,arrselectnames)
+        self.bottomframe.flesh(ssheet.arrErrorFile,ssheet.arrNewFile,ssheet.arrSuccFile)
 
     def selectNeedMergeFiles(self,arruserselects):
         arrR=[]
@@ -143,11 +143,11 @@ class bottomHintFrame:
 
         self.scrollformframe.pack()
         formframe.pack(side=TOP)
-        leftframe.pack(side=LEFT,fill=BOTH,padx=50)#不 fill=BOTH简直没有办法左对齐
+        leftframe.pack(side=LEFT,fill=BOTH)#不 fill=BOTH简直没有办法左对齐
 
         rightframe=Frame(ballframe,name="rightframe")
-        Label(rightframe,text="导出结果：",name="hinttext").pack(side=TOP)
-        rightframe.pack(side=LEFT,fill=BOTH,padx=100)
+        Label(rightframe,text="导出结果：",name="hinttext").pack(side=TOP,fill=X)
+        rightframe.pack(side=LEFT,fill=BOTH)
 
         ballframe.pack(side=TOP,fill=BOTH)
 
@@ -165,7 +165,7 @@ class bottomHintFrame:
     def getStr(self,arrfiles,shint):
         rstr=""
         if(len(arrfiles)>0):
-            rstr+=shint+"\n"+RETool.splitStrArr(arrfiles,1)+"\n"
+            rstr+=shint+"\n"+RETool.splitStrArr(arrfiles,4)+"\n"
         return rstr
 
     def getLangFiles(self):

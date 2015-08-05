@@ -1,4 +1,4 @@
 {
- "excelpath": "E:/excel2xml/languageinput/[Flower Shop] Multi-Language Translation Sentence Form.xlsx", 
- "outputpath": "E:/excel2xml/languageoutput/"
+ "outputpath": "E://", 
+ "excelpath": "E:/excel2xml/languageinput/[Flower Shop] Multi-Language Translation Sentence Form.xlsx"
 }

@@ -6,7 +6,7 @@ from excel2xmlcode import readConfig
 import os.path
 
 class SaveSheet:
-    sheet,arrErrorFile,arrNewFile=None,[],[]
+    sheet,arrErrorFile,arrNewFile,arrSuccFile=None,[],[],[]
     #将表格保存到各个语言对应的文件目录中
     def save(self, sheet):
         self.sheet=sheet
@@ -19,16 +19,20 @@ class SaveSheet:
             xfilename=readConfig.getOutputPath()+k+"/"+filename+".xml"#保存的文件名字
             langmentr=ETTool.getElement(sheet.lstree,v)#对应语言的文字配置
             rroot=None
-            if(os.path.isfile(xfilename)):#如果存在则合并
+            if(False==os.path.isdir(readConfig.getOutputPath()+k)):#不存在目录
+                self.addFileName2Array(self.arrErrorFile,k+"/"+filename)
+                continue
+            elif(os.path.isfile(xfilename)):#如果存在则合并
                 rroot=ETTool.readETRoot(xfilename)
                 if(rroot==None):
-                    self.arrErrorFile.append(filename)
+                    self.addFileName2Array(self.arrErrorFile,k+"/"+filename)
                     continue
                 self.mergeOneLanguage(rroot,langmentr[0])
+                self.addFileName2Array(self.arrSuccFile,k+"/"+filename)
             else:#不存在则新建
                 rroot=ETTool.createETRoot()
                 ETTool.appendElement(rroot,langmentr[0])
-                self.arrNewFile.append(filename)
+                self.addFileName2Array(self.arrNewFile,k+"/"+filename)
             self.writeOneLanguage(xfilename,rroot)
     #将表格中的文字合并到.xml中
     def mergeOneLanguage(self, oldxmlroot,sheet):
@@ -62,3 +66,10 @@ class SaveSheet:
 
     def writeOneLanguage(self,spath,rroot):
         ETTool.writeXml(spath,rroot)
+
+    def addFileName2Array(self, arr, filename, brepeat=False):
+        if(brepeat==True):
+            arr.append(filename)
+        elif(arr.count(filename)<=0):
+            arr.append(filename)
+
