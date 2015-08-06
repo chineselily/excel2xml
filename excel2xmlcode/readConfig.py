@@ -4,6 +4,8 @@ from excel2xmlcode.utils.app.AppData import AppData
 
 xmlpath="languageoutput/"
 keyColumn="Key"
+tagColumn="TagName"
+fileColumn="FileName"
 defaultTagName="base"
 defaultKeyName="info"
 arrLanguageName=["Chinese","English","German","Dutch","French","Spanish","Portuguese","Italian","Russian"]
@@ -18,18 +20,25 @@ def arrLanguageFileName(slanguage):
     return dicLanguageFiles.get(slanguage,[])
 
 def getExcelPath():
-    # rp=appd.getAppData("excelpath")
-    # if(rp==None):
-    #     return "D:/"
-    # return rp
     return appd.getAppData("excelpath")
+
+def getExcelName():
+    path=getExcelPath()
+    arrfiles=path.split('/')
+    if(len(arrfiles)<=1):
+        arrfiles=path.split('//')
+    if(len(arrfiles)>=1):
+        return arrfiles[len(arrfiles)-1]
+    return ""
+
 def saveExcelPath(spath):
     appd.saveAppData("excelpath",spath)
 
 def getOutputPath():
     return appd.getAppData("outputpath")
+
 def saveOutputPath(spath):
-    rp=appd.saveAppData("outputpath",spath)
+    appd.saveAppData("outputpath",spath)
 
 
 

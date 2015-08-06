@@ -6,36 +6,11 @@ from excel2xmlcode import RETool
 from excel2xmlcode import log
 from excel2xmlcode import readConfig
 
-def writeXml(spath, topelem, scode="utf-8"):
-    strinit="<?xml version='1.0' encoding='UTF-8'?>"
-    strinit=strinit+writeXmlImp(topelem,"")
-    strinit=strinit.replace(readConfig.newlineescape,"\n")
-    file = open(file=spath,mode='w',encoding=scode)
-    file.write(strinit)
-    file.close()
-    #原始的文件写操作
-    # top2 = prettify(topelem)
-    # file = open(file=spath,mode='w',encoding=scode)
-    # file.write(top2.decode(scode))
-    # file.close()
-def writeXmlImp(topelem, strenter):
-    strai,stra,strcral=" ","",""
-    #解析元素的属性，组合成字符串
-    for i,v in enumerate(topelem.attrib):
-        stra+=strai+str(v)+"="+'"'+str(topelem.get(v))+'"'+"\n"+strenter+strai
-    #组合元素的头
-    strr="\n"+strenter+"<"+topelem.tag+stra
-    #递归组合元素的子元素
-    for child in topelem:
-        strcr=writeXmlImp(child,strenter+"\t")
-        strcral+=strcr+strenter
-    #组合元素的尾
-    if(len(strcral)>0):
-        strr+=">"+strcral+"\n"+strenter+"</"+topelem.tag+">"
-    else:
-        strr+="/>"
-    return strr
-
+#原始的文件写操作
+# top2 = prettify(topelem)
+# file = open(file=spath,mode='w',encoding=scode)
+# file.write(top2.decode(scode))
+# file.close()
 def prettify(elem, scode="utf-8"):
     """Return a pretty-printed XML string for the Element.
     """
@@ -63,9 +38,6 @@ def readETRoot(spath):
 def addElement(parentelm,subtagname,attrib={}):
     return ET.SubElement(parentelm,subtagname,attrib)
 
-def appendElement(parentelm, subelm):
-    parentelm.append(subelm)
-
 def getElement(parentelm,subtagname):
     arrA=parentelm.findall(".//"+subtagname)
     if(arrA==None or len(arrA)<=0):
@@ -78,19 +50,6 @@ def getAllElementNames(topelm):
     for ele in topelm:
         arrR.append(ele.tag)
     return arrR
-
-def getElementByAttrib(parentelm, subtagname,attribname,attribvalue):
-    strp=".//"+subtagname+"[@"+attribname+"='"+attribvalue+"'"+"]"
-    arrA=parentelm.findall(strp)
-    if(arrA!=None and len(arrA)>0):
-        return arrA[0]
-    return None
-
-def getElementText(parentelm, subtagname):
-    elemt = getElement(parentelm,subtagname)
-    if(elemt!=None):
-        return elemt.text
-    return None
 
 def getElementAttri(parentelm, subtagname):
     elemt = getElement(parentelm, subtagname)
@@ -107,13 +66,6 @@ def getElementAttriValue(elemt, attriname):
         return elemt.get(attriname)
     return None
 
-def getElementAllAttriByName(parentelm,subgtagname, arrtriname):
-    arrR=[]
-    arrA=parentelm.findall(".//"+subgtagname)
-    for ele in arrA:
-        arrR.append(ele.get(arrtriname))
-    return arrR
-
 def getElementAllAttri(parentelm,subgtagname):
     arrR=[]
     arrA=parentelm.findall(".//"+subgtagname)
@@ -127,14 +79,6 @@ def getAllParentTags(parentelm, attriname):
     arrA=parentelm.findall(strp)
     for i,v in enumerate(arrA):
         arrR.append(v.tag)
-    return arrR
-
-def getAttriValue(parentelm, attriname):
-    arrR=[]
-    strp=".//*"+"[@"+attriname+"]"
-    arrA=parentelm.findall(strp)
-    for i,v in enumerate(arrA):
-        arrR.append(v.get(attriname))
     return arrR
 
 def getSubElementByTag(parentelm, tagname):
@@ -154,12 +98,4 @@ def setElementAttriByName(parentelm,subtagname,attriname, attrivalue):
     if(elemt!=None):
         elemt.set(attriname,attrivalue)
 
-def getXmlElemDescribe(self,elem):
-    str1 = " tag=",elem.tag," attrib=",elem.attrib," text=",elem.text
-    return str1
-
-def splitstr(strt,sep=','):
-    if(strt!=None):
-        return strt.rsplit(sep)
-    return []
 

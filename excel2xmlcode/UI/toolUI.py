@@ -1,13 +1,16 @@
 __author__ = 'Administrator'
 
-from excel2xmlcode import readXlsx
-from excel2xmlcode import saveSheetToXml
-from excel2xmlcode import readConfig
-from excel2xmlcode import RETool
-from excel2xmlcode.UI.scrollFrame import VerticalScrolledFrame
 from tkinter.filedialog import askopenfilename
 from tkinter.filedialog import askdirectory
 from tkinter import *
+
+from excel2xmlcode import readXlsx
+from excel2xmlcode.savesheet import saveSheet
+from excel2xmlcode import readConfig
+from excel2xmlcode import RETool
+from excel2xmlcode.UI.scrollFrame import VerticalScrolledFrame
+from excel2xmlcode.parsesheet import parseSheet
+
 
 class ToolUI:
     arrMergeSheets=[]
@@ -16,8 +19,8 @@ class ToolUI:
         self.root = Tk()
         self.root.title('合并google excel到多语言包')    #定义窗体标题
         self.root.geometry('760x650')
-        self.topselectframe=topFrame(self.root,self.readExcel)
-        self.midformframe=midFormFrame(self.root,self.startMerge)
+        self.topselectframe=topFrame(self.root,self.readExcel)#按钮点击响应事件self.readExcel
+        self.midformframe=midFormFrame(self.root,self.startMerge)#按钮点击响应事件self.startMerge
         self.bottomframe=bottomHintFrame(self.root)
         self.root.mainloop()
     #解析已选择的excel
@@ -35,11 +38,11 @@ class ToolUI:
         arrSheetNames=self.readExcel.getNeedParseSheets(arrselectnames)
         if(len(arrSheetNames)<=0):
             return
-        lsheet = readXlsx.LanguageSheet()
-        ssheet=saveSheetToXml.SaveSheet()
+        lsheet = parseSheet.LanguageSheet()
+        ssheet= saveSheet.SaveSheet()
         for i,v in enumerate(arrSheetNames):
             lsheet.readSheet(v)
-            ssheet.save(lsheet)
+            ssheet.save(lsheet.files)
         self.bottomframe.flesh(ssheet.arrErrorFile,ssheet.arrNewFile,ssheet.arrSuccFile)
 
     def selectNeedMergeFiles(self,arruserselects):
@@ -72,7 +75,7 @@ class topFrame:
         options['defaultextension'] = '.xlsx'
         options['filetypes'] = [('excel files', '.xlsx')]
         options['initialdir'] = readConfig.getExcelPath()
-        options['initialfile'] = 'language.xlsx'
+        options['initialfile'] =readConfig.getExcelName()
         #options['parent'] = root
         options['title'] = '选择转换的excel'
         self.excelpath = askopenfilename(**options) # show an "Open" dialog box and return the path to the selected file
@@ -112,6 +115,8 @@ class midFormFrame:
         lselect=Label(master,fg="red",name="selectformhint",text="").pack(side=TOP)
 
     def freshForms(self,arrforms):
+        for child in self.scrollformframe.interior.winfo_children():
+            child.destroy()
         for i,v in enumerate(arrforms):
              var = IntVar()
              chk = Checkbutton(self.scrollformframe.interior, text=v, variable=var,command=self.checkBtnClick)
