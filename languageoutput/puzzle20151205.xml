@@ -2,9 +2,8 @@
 <root>
 	<Chinese>
 		<base>
-			<info puzzle_title="海洋七月拼圖"
-			  puzzle_desc="炎熱的七月需要沙灘的海風給你帶來涼意，完成拼圖任務，獲取海洋風格裝飾物吧！"
-			 />		
-		</base>	
+			<info puzzle_desc="炎熱的七月需要沙灘的海風給你帶來涼意，完成拼圖任務，獲取海洋風格裝飾物吧！"
+			      puzzle_title="海洋七月拼圖"/>
+		</base>
 	</Chinese>
 </root>

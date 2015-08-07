@@ -1,46 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <root>
 	<Chinese>
-		<managerHelp20150905>
-			<info name="Cook"
-			  name_1="cook"
-			  name_2="cook"
-			  name_3="cook"
-			  leave="謝謝店長的幫忙，衝浪運動很開心哦！"
-			  content_1="夏天的海風吹過，有一種清涼的感覺。"
-			  content_3="請店長幫我製作一點乾花去裝飾海邊的小屋吧！"
-			  content_2="我來海邊衝浪，這是一項很好的運動呢"
-			  btn_2="沒錯！"
-			  btn_3="沒問題！"
-			  content="我需要一些乾花來裝飾海邊的小屋"
-			  btn_1="是啊！"
-			 />		
-		</managerHelp20150905>	
-		<flowerExpo20150924>
-			<info btn_1="是嗎？！"
-			  btn_3="好啊~"
-			  content_1="漂亮的花燈寄託著人們的思念之情，在晚上經常會有人放飛花燈。"
-			  content_3="你如果也有十分思念有不在身邊的人，也可以放花燈哦！"
-			  content_2="是呢！花燈隨風飄遠，就像把放花燈的人思念帶給遠方的人。"
-			  btn_2="聽起來不錯呢！"
-			  name_1="derek"
-			  name_2="derek"
-			  name_3="derek"
-			 />		
-		</flowerExpo20150924>	
+		<base>
+			<info doodadsMaking_0="孔雀藍裝飾"
+			      doodadsMaking_1="doodadsMaking_1"/>
+		</base>
 	</Chinese>
-	<English>
-		<flowerExpo20150924>
-			<info btn_1="flowerExpo20150624_btn1"
-			  btn_3="flowerExpo20150624_btn3"
-			  content_1="flowerExpo20150624_content1"
-			  content_3="flowerExpo20150624_content3"
-			  content_2="flowerExpo20150624_content2"
-			  btn_2="flowerExpo20150624_btn2"
-			  name_1="derek"
-			  name_2="derek"
-			  name_3="derek"
-			 />		
-		</flowerExpo20150924>	
-	</English>
 </root>
