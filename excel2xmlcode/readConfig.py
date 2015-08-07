@@ -24,6 +24,8 @@ def getExcelPath():
 
 def getExcelName():
     path=getExcelPath()
+    if(path==None):
+        return ""
     arrfiles=path.split('/')
     if(len(arrfiles)<=1):
         arrfiles=path.split('//')
