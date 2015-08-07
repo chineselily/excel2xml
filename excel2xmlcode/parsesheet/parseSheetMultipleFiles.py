@@ -7,8 +7,12 @@ def parseMultipleFilessSheet(sheet, minrow, maxrow, mincol, maxcol, keycol,keyro
     lstrees,dictag,lasttag,endtag=[],{},None,None
     for tagrow in range(minrow,maxrow):#查找表格有多少个文件，并且记录每个文件的起始minrow,maxrow
         arrtag=[]
-        cell = sheet.cell(row=tagrow,column=mincol-1)
-        cellkey=sheet.cell(row=tagrow,column=mincol)
+        try:
+            cell = sheet.cell(row=tagrow,column=mincol-1)
+            cellkey=sheet.cell(row=tagrow,column=mincol)
+        except Exception as detaile:
+            print(detaile)
+            continue
         if(cell.column==None or cell.row==None or cell.value==None or cellkey.column==None or cellkey.row==None or cellkey.value==None):
             continue
         if(dictag.get(cell.value)!=None):

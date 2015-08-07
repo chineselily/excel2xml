@@ -6,12 +6,15 @@ import xml.etree.ElementTree as ET
 from xml.etree import ElementTree
 
 def writeXml(spath, topelem, scode="utf-8"):
-    strinit="<?xml version='1.0' encoding='UTF-8'?>"
-    strinit=strinit+parseXmlToString(topelem)
-    strinit=strinit.replace(readConfig.newlineescape,"\n")
-    file = open(file=spath,mode='w',encoding=scode)
-    file.write(strinit)
-    file.close()
+    try:
+        strinit="<?xml version='1.0' encoding='UTF-8'?>"
+        strinit=strinit+parseXmlToString(topelem)
+        strinit=strinit.replace(readConfig.newlineescape,"\n")
+        file = open(file=spath,mode='w',encoding=scode)
+        file.write(strinit)
+        file.close()
+    except Exception as detaile:
+        print(detaile)
 def parseXmlToString(root,newline='\n',indent='\t'):
     return parseTreeElement(root,0,newline,indent)
 
