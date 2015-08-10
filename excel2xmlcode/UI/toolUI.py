@@ -57,6 +57,7 @@ class topFrame:
     def __init__(self,master, allselectedcommand):
         self.master=master
         self.allselectedcommand=allselectedcommand
+        self.excelpath=""
         #选择需要转换的表格
         eframe=Frame(master,name="excelselectframe")# excel select frame
         b1=Button(eframe, text="选择需要转换的excel", fg="red", command=self.b1click, name="selectexcelbtn").pack(side=LEFT, anchor=W, expand=NO) #此处side为LEFT表示将其放置 到frame剩余空间的最左方

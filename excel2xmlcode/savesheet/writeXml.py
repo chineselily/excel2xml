@@ -7,10 +7,10 @@ from xml.etree import ElementTree
 
 def writeXml(spath, topelem, scode="utf-8"):
     try:
+        file = open(file=spath,mode='w',encoding=scode)
         strinit="<?xml version='1.0' encoding='UTF-8'?>"
         strinit=strinit+parseXmlToString(topelem)
         strinit=strinit.replace(readConfig.newlineescape,"\n")
-        file = open(file=spath,mode='w',encoding=scode)
         file.write(strinit)
         file.close()
     except Exception as detaile:
@@ -45,11 +45,14 @@ def parseElementChildren(ele,hierarchy,newline,indent):
         tempr.sort(reverse=True)
         arrexclude.extend(tempr[3:])#exclude old dates，同样的字段，最多只保留3个，比如persontarget20150720 persontarget20150729 persontarget20150829 persontarget20150910，只保留后三个
 
+    arrtags = list(set(arrtags))
     arrtags.sort()# children的输出顺序进行排序
     for i,v in enumerate(arrtags):
         if(v in arrexclude):
             continue
-        strr+=parseTreeElement(ele.find(v),hierarchy+1,newline,indent)
+        arrelem=ele.findall(v)
+        for k, m in enumerate(arrelem):
+            strr+=parseTreeElement(m,hierarchy+1,newline,indent)
     return strr
 
 def parseElementAttri(ele, hierarchy, newline, indent):
